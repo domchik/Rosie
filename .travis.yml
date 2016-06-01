@@ -1,9 +1,5 @@
 language: android
 
-env:
-  global:
-    MALLOC_ARENA_MAX=2
-
 android:
   components:
     - platform-tools
@@ -14,8 +10,6 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
     - sys-img-armeabi-v7a-android-21
-
-sudo: required
 
 before_script:
   - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
