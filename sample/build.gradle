@@ -21,6 +21,9 @@ buildscript {
     mavenCentral()
     maven { url "https://jitpack.io" }
   }
+  dependencies {
+    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+  }
 }
 
 
@@ -53,11 +56,9 @@ def getPrivateMarvelKey() {
   "null"
 }
 
-def preDexEnabled = "true".equals(System.getProperty("pre-dex", "false"))
+def preDexEnabled = "true".equals(System.getProperty("pre-dex", "true"))
 
-println('ESTEEEEEEE')
-println(preDexEnabled)
-println(System.getProperty("pre-dex", "false"))
+println('ESTEEEEEEE :'+ preDexEnabled)
 
 android {
   compileSdkVersion 23
