@@ -64,7 +64,7 @@ android {
 
   dexOptions {
     preDexLibraries = preDexEnabled
-    javaMaxHeapSize "2g"
+    javaMaxHeapSize "1g"
   }
 
   defaultConfig {
