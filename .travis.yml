@@ -11,11 +11,8 @@ android:
     - extra-android-m2repository
     - sys-img-armeabi-v7a-android-21
 
-jdk:
-  - oraclejdk8
-
-
-sudo: false
+sudo: required
+dist: precise
 
 before_script:
   - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
@@ -27,4 +24,4 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
-  - ./gradlew checkstyle build connectedCheck -Dpre-dex=false -Pcom.android.build.threadPoolSize=1 -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xms2048m -Xmx2048m" -Dorg.gradle.daemon=false --stacktrace
+  - ./gradlew checkstyle build connectedCheck -Dpre-dex=false -Pcom.android.build.threadPoolSize=1 -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xms4096m -Xmx4096m" -Dorg.gradle.daemon=false --stacktrace
